@@ -89,6 +89,12 @@ h4 {
   align-items: center;
 }
 
+.start-btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
 .progress {
   margin-bottom: 4rem;
   display: grid;

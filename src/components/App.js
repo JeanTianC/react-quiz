@@ -45,6 +45,23 @@ function reducer(state,action){
         secondsRemaining:state.questions.length * SECS_PER_QUESTION
       }
 
+      case "startBeginner":
+        return {
+          ...state,
+          status:"active",
+          questions:state.questions.filter(q=>q.points===10),
+          secondsRemaining:state.questions.filter(q=>q.points===10).length * SECS_PER_QUESTION
+        }
+
+        case "startMastery":
+        return {
+          ...state,
+          status:"active",
+          questions:state.questions.filter(q=>q.points>10),
+          secondsRemaining:state.questions.filter(q=>q.points>10).length * SECS_PER_QUESTION
+        }
+      
+
     case 'newAnswer':
       const question = state.questions.at(state.index)
       return {
